@@ -1,0 +1,127 @@
+<style>
+  .mtable th {
+    font-weight: 600;
+    background: #e8edf5;
+    min-width: 120px !important;
+    max-width: 120px !important;
+    color: #333333 !important;
+    padding: 10px 10px;
+  }
+
+  .nav-tabs-custom>.nav-tabs>li {
+    border-top: 3px solid transparent;
+    cursor: pointer;
+    /* margin-bottom: -2px; */
+    border-radius: 30px;
+    /* padding: 0px 15px !important; */
+    margin-right: 5px;
+    background: #eaeffc;
+    padding: 10px 24px !important;
+  }
+
+  .mtable td {
+    min-width: 120px !important;
+    background-color: #fff;
+    max-width: 120px !important;
+    padding: 6px 10px;
+    text-align: left;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+  .mtable tbody {
+    width: 100%;
+    position: relative;
+    display: block;
+    max-height: 380px !important;
+  }
+
+  #s4-workspace {
+    overflow-y: auto !important;
+    position: relative;
+  }
+
+  .searchbox {
+    height: 50px;
+    width: 180px;
+    border-radius: 10px;
+   
+   }
+</style>
+
+<section class="content">
+
+  <div class="row">
+    <div class="col-md-6">
+      <!-- <h2>Welcome in  Booklist </h2> -->
+      <h3 style=" font-size:28px;    margin-top: 0px;
+        margin-bottom: 25px; background:none; color:#464775; ">Book List
+
+         </h3>
+
+
+
+
+        <br>
+        <br>
+      
+           
+          <br>
+
+           <div>
+            <input id="tv" class="searchbox"  name="search"    type="text"  placeholder="Search "
+             aria-label="Search">
+                
+           
+           </div>
+           <br> <br>
+           <!-- [(ngModel)]="searchText" -->
+           <!-- (click)="searchFilter( roll );" -->
+        <div style="border-radius:30px; padding:8px 13px; margin-right: 5px;width:20%;" class="btn btn-info pull-right"
+         >Go</div>
+        <div style="border-radius:30px; padding:8px 13px; margin-right: 5px;width:20%;" class="btn btn-info pull-right"
+          ng-click="resetFilter();">Reset</div>
+          <br> <br>
+         
+
+     
+      <div class="tab-content">
+
+        <div style="margin-top: 10px;" class="ten columns">
+          <table class='mtable table-striped '>
+            <thead>
+              <tr style="display:inline-table;">
+                <th style="min-width:100px !important; max-width:100px !important">S.No</th>
+                <th>Book Name</th>
+                <th>User</th>
+                <th>Contact No</th>
+                <th>Address</th>
+                <th>OrderBook</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr *ngFor="let item of std | filter:searchText">      | filter:searchText -->
+                 <!-- | filter:BookSearch -->
+              <tr *ngFor="let item of std ">
+                <td style="min-width:100px !important; max-width:100px !important">{{item.Sn}}</td>
+                <td>{{item.Book}}</td>
+                <td>{{item.User}}</td>
+                <td>{{item.Phone}}</td>
+                <td>{{item.Address}}</td>
+                <td><button type="button" (click)="myFunc()">Click here!</button></td>
+              </tr>
+              <tr ng-show="std.length == 0">
+                <td colspan="99">No Record Found.</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+        </div>
+
+     
+      </div>
+
+
+   
+  
